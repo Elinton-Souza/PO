@@ -6,8 +6,16 @@ export class Cliente {
     *Método especial que executa apenas
     *uma vez, que é ao criar o objeto
     */
-    constructor( nome: string ) {
-        this.nome = nome;
+    constructor() {
+        this.nome = "";
         this.telefone = "";
+    }
+
+    criarCliente(nome: string, telefone: string): Cliente{
+        if(nome.length < 3 )
+
+        this.nome = nome;
+        this.telefone = telefone;
+        return this;
     }
 }
