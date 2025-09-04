@@ -1,12 +1,49 @@
-import { Cliente } from "./Cliente";
+import Prompt from "prompt-sync";
+import { Personagem } from "./Personagens";
+import { Util } from "./Util";
 
-function criarCliente(nome: string, telefone: string): Cliente {
-  const cliente: Cliente = new Cliente();
-  cliente.criarCliente(nome, telefone);
-  return cliente;
+const teclado = Prompt();
+
+const p = new Personagem(Util.gerarPersona());
+
+p.classe = "Mullet";
+p.raca = "Morto-vivo";
+p.nivel = Math.floor(1 + Math.random() * 99);
+p.arma = "Bodóque";
+p.manaMaxima = 100;
+p.manaAtual = p.manaMaxima;
+p.vidaMaxima = 100;
+p.vidaAtual = p.vidaMaxima;
+p.poderAtaque = 1;
+
+while (true) {
+  console.log("+------------MENU--------------+");
+  console.log("|1. Treinar Poder de Ataque    |");
+  console.log("|2. Ver status                 |");
+  console.log("|3. Checar se personagem vive  |");
+  console.log("|9. Sair                       |");
+  console.log("+------------------------------+");
+
+  const escolha: number = +teclado("Escolha uma opção do menu: ");
+
+  if (escolha === 9) {
+    break;
+  }
+  switch (escolha) {
+    case 1:
+      treinarPoderAtaque(p);
+      break;
+    case 2:
+      console.table(p);
+      break;
+    case 3:
+      console.log(p.estarVivo() ? "Personagem vivo" : "Personagem subiu!");
+    default:
+      console.log("Opção inválida!");
+      break;
+  }
 }
 
-const clientes: Cliente[] = [];
-clientes.push(criarCliente("Bruna", "123456789"));
-clientes.push(criarCliente("Edécio", "123456789"));
-clientes.push(criarCliente("Gladimir", "123456789"));
+function treinarPoderAtaque(person: Personagem): void {
+  person.treinarPoderAtaque();
+}

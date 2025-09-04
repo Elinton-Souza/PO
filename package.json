@@ -1,19 +1,28 @@
 {
-  "name": "angelo",
+  "name": "poo-angelo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elinton-Souza/POO-angelo.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elinton-Souza/POO-angelo/issues"
+  },
+  "homepage": "https://github.com/Elinton-Souza/POO-angelo#readme",
   "description": "",
-  "devDependencies": {
-    "@faker-js/faker": "^10.0.0",
-    "@types/prompt-sync": "^4.2.3",
+  "dependencies": {
     "prompt-sync": "^4.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "@types/prompt-sync": "^4.2.3"
   }
 }
